@@ -37,6 +37,7 @@ public class TesteSprint1 {
 	
 	@Test
 	public void falhaAoRemoverUsuario() {
+		when(bd.removerUsuario("Leonardo")).thenReturn("Não foi possível remover usuário Leonardo. Esse usuário não existe.");
 		assertEquals("Não foi possível remover usuário Leonardo. Esse usuário não existe.",bibliotecaria.removerUsuario("Leonardo"));
 	}
 	
