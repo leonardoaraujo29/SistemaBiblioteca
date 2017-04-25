@@ -43,16 +43,19 @@ public class TesteSprint1 {
 	
 	@Test
 	public void bloquearUsuarioComSucesso() {
+		when(bd.bloquearUsuario("Luiz")).thenReturn("Usuario Luiz bloqueado com sucesso.");
 		assertEquals("Usuario Luiz bloqueado com sucesso.",bibliotecaria.bloquearUsuario("Luiz"));
 	}
 	
 	@Test
 	public void falhaAoBloquearUsuarioPorNaoExistir() {
+		when(bd.bloquearUsuario("Leonardo")).thenReturn("Não foi possível bloquear usuário Leonardo. Esse usuário não existe.");
 		assertEquals("Não foi possível bloquear usuário Leonardo. Esse usuário não existe.",bibliotecaria.bloquearUsuario("Leonardo"));
 	}
 	
 	@Test
 	public void falhaAoBloquearUsuarioPorJaEstarBloqueado() {
+		when(bd.bloquearUsuario("Luiz")).thenReturn("Não foi possível bloquear usuário Luiz. Esse usuário já está bloqueado.");
 		assertEquals("Não foi possível bloquear usuário Luiz. Esse usuário já está bloqueado.",bibliotecaria.bloquearUsuario("Luiz"));
 	}
 

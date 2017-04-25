@@ -17,7 +17,7 @@ public class Bibliotecaria {
 	}
 	
 	public String bloquearUsuario(String nomeUsuario){
-		return null;
+		return bancoDeDados.bloquearUsuario(nomeUsuario);
 	}
 
 }
