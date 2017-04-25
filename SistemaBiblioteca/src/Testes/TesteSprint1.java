@@ -31,6 +31,7 @@ public class TesteSprint1 {
 	
 	@Test
 	public void removerUsuarioComSucesso() {
+		when(bd.removerUsuario("Leonardo")).thenReturn("Usuário Leonardo removido com sucesso");
 		assertEquals("Usuário Leonardo removido com sucesso",bibliotecaria.removerUsuario("Leonardo"));
 	}
 	
