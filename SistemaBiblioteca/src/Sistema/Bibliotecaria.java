@@ -13,7 +13,7 @@ public class Bibliotecaria {
 	}
 	
 	public String removerUsuario(String nomeUsuario){
-		return null;
+		return bancoDeDados.removerUsuario(nomeUsuario);
 	}
 	
 	public String bloquearUsuario(String nomeUsuario){

@@ -25,6 +25,7 @@ public class TesteSprint1 {
 	@Test
 	public void falhaAoInserirUmNovoUsuario() {
 		Usuario usuario = new Usuario("Leonardo");
+		when(bd.inserirUsuario(usuario)).thenReturn("Não foi possível inserir o usuário Leonardo. Nome já existente.");
 		assertEquals("Não foi possível inserir o usuário Leonardo. Nome já existente.",bibliotecaria.inserirUsuario(usuario));
 	}
 	
