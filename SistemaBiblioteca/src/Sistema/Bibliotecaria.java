@@ -4,8 +4,12 @@ public class Bibliotecaria {
 	
 	private BancoDeDados bancoDeDados;
 	
+	public Bibliotecaria(BancoDeDados bd){
+		bancoDeDados = bd;
+	}
+	
 	public String inserirUsuario(Usuario usuario){
-		return null;
+		return bancoDeDados.inserirUsuario(usuario);
 	}
 	
 	public String removerUsuario(String nomeUsuario){

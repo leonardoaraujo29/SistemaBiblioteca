@@ -10,14 +10,16 @@ import static org.mockito.Mockito.*;
 public class TesteSprint1 {
 
 	BancoDeDados bd = mock(BancoDeDados.class);
-	Bibliotecaria bibliotecaria = new Bibliotecaria();
+	Bibliotecaria bibliotecaria = new Bibliotecaria(bd);
 	
 	@Test
 	public void inserirUmNovoUsuarioComSucesso() {
 		Usuario usuario1 = new Usuario("Leonardo");
+		when(bd.inserirUsuario(usuario1)).thenReturn("Usuário Leonardo inserido com sucesso.");
 		assertEquals("Usuário Leonardo inserido com sucesso.",bibliotecaria.inserirUsuario(usuario1));
 		Usuario usuario2 = new Usuario("Luiz");
-		assertEquals("Usuário Leonardo inserido com sucesso.",bibliotecaria.inserirUsuario(usuario2));
+		when(bd.inserirUsuario(usuario2)).thenReturn("Usuário Luiz inserido com sucesso.");
+		assertEquals("Usuário Luiz inserido com sucesso.",bibliotecaria.inserirUsuario(usuario2));
 	}
 	
 	@Test
